@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@clerk/backend':
+    specifier: ^1.2.0
+    version: 1.2.0(react-dom@18.3.1)(react@18.3.1)
   '@clerk/nextjs':
     specifier: ^5.0.9
     version: 5.0.9(next@14.2.3)(react-dom@18.3.1)(react@18.3.1)
+  '@hono/clerk-auth':
+    specifier: ^2.0.0
+    version: 2.0.0(@clerk/backend@1.2.0)(hono@4.3.9)
   '@hono/zod-validator':
     specifier: ^0.2.1
     version: 0.2.1(hono@4.3.9)(zod@3.23.8)
@@ -96,6 +102,19 @@ packages:
       - react-dom
     dev: false
 
+  /@clerk/backend@1.2.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-TI3w7R2MGOHIl3ytWvyX60eiPIKD6XSz9tonqbek8sWrAgE1IR1AsPaND6Whc6ly5v1AiOrXJo9lJbRowIKXxA==}
+    engines: {node: '>=18.17.0'}
+    dependencies:
+      '@clerk/shared': 2.2.0(react-dom@18.3.1)(react@18.3.1)
+      cookie: 0.5.0
+      snakecase-keys: 5.4.4
+      tslib: 2.4.1
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: false
+
   /@clerk/clerk-react@5.0.5(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-L6ofmAD22oJy8TmF2HdWv8tAo+3+yAkpaDO6foBnFdRCdo5KDwbkxezKQ1dZ+H9B3+wlr+BNyWhuZX1U+YUn5w==}
     engines: {node: '>=18.17.0'}
@@ -131,6 +150,27 @@ packages:
 
   /@clerk/shared@2.1.0(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-8BwfjHFUHLtvFJzFFFvk66+maXb+EZlrf1NZ2GiRz6pOfT0VoYLK7MzLrY5GtHilNRtsvuTVlzg8Xxvn06AP6g==}
+    engines: {node: '>=18.17.0'}
+    requiresBuild: true
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      glob-to-regexp: 0.4.1
+      js-cookie: 3.0.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      std-env: 3.7.0
+      swr: 2.2.0(react@18.3.1)
+    dev: false
+
+  /@clerk/shared@2.2.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-dqd/g8xTFEVYi0QDRyYI+YBT/EeTE1vIEoJbuP98C7Ybqmp7/RC0Cj88Ckam1wToD3okYYf9t13/qIJ+ux0XTg==}
     engines: {node: '>=18.17.0'}
     requiresBuild: true
     peerDependencies:
@@ -193,6 +233,17 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@hono/clerk-auth@2.0.0(@clerk/backend@1.2.0)(hono@4.3.9):
+    resolution: {integrity: sha512-ad+U8jDlBPgXBTv8BRnPrSFC/uX8U0ojiCR77I3WWHm5I9L3/bHsZpQ2lgvLTV3YbJyVmAdKJArEAQiPjodGdA==}
+    engines: {node: '>=16.x.x'}
+    peerDependencies:
+      '@clerk/backend': ^1.0.0
+      hono: '>=3.*'
+    dependencies:
+      '@clerk/backend': 1.2.0(react-dom@18.3.1)(react@18.3.1)
+      hono: 4.3.9
+    dev: false
 
   /@hono/zod-validator@0.2.1(hono@4.3.9)(zod@3.23.8):
     resolution: {integrity: sha512-HFoxln7Q6JsE64qz2WBS28SD33UB2alp3aRKmcWnNLDzEL1BLsWfbdX6e1HIiUprHYTIXf5y7ax8eYidKUwyaA==}
@@ -930,7 +981,7 @@ packages:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /eastasianwidth@0.2.0:
@@ -1951,7 +2002,7 @@ packages:
   /lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /lru-cache@10.2.2:
@@ -2080,7 +2131,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /normalize-path@3.0.0:
@@ -2546,7 +2597,7 @@ packages:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /snakecase-keys@5.4.4:
