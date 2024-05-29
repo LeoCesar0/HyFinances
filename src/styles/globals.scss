@@ -4,8 +4,11 @@
 
 @layer base {
   :root {
+    --gray:233 8% 20%;
+
+
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 233 8% 20%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -13,13 +16,13 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: #23d5ab;
+    --primary: 166 72% 49%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: theme(colors.indigo.400);
+    --secondary: 234 89% 74%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --tertiary: #e73c7e;
+    --tertiary: 337 78% 57%
     --tertiary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -50,7 +53,7 @@
 
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: theme(colors.indigo.400);
+    --secondary: 234 89% 74%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
