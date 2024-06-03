@@ -26,30 +26,37 @@ export const Navigation: React.FC<IProps> = ({}) => {
 
   if (isMobile) {
     return (
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild>
-          <Button variant={"outline"} size={"sm"} className="transition-all ">
-            <Menu className="size-4" />
-          </Button>
-        </SheetTrigger>
-        <SheetContent>
-          <nav className="flex flex-col gap-y-2 pt-6">
-            {DASHBOARD_ROUTES.map((route) => {
-              const isActive = pathname === route.href;
-              return (
-                <Button
-                  size="sm"
-                  variant={isActive ? "secondary" : "ghost"}
-                  key={route.href}
-                  onClick={() => goTo(route.href)}
-                >
-                  {route.label}
-                </Button>
-              );
-            })}
-          </nav>
-        </SheetContent>
-      </Sheet>
+      <>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant={"outline"}
+              size={"sm"}
+              className="transition-all bg-primary-foreground/50 border-border/20"
+            >
+              <Menu className="size-4 text-foreground" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent>
+            <nav className="flex flex-col gap-y-2 pt-6">
+              {DASHBOARD_ROUTES.map((route) => {
+                const isActive = pathname === route.href;
+                return (
+                  <Button
+                    size="sm"
+                    variant={isActive ? "secondary" : "ghost"}
+                    key={route.href}
+                    onClick={() => goTo(route.href)}
+                    className="w-full justify-start"
+                  >
+                    {route.label}
+                  </Button>
+                );
+              })}
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </>
     );
   }
 
